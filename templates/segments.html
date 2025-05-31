@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Segments</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <h2>MyFinances</h2>
+        <nav>
+            <ul>
+                <li><a href="/">Overview</a></li>
+                <li class="active"><a href="/segments">Segments</a></li>
+                <li><a href="/reports">Reports</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <header class="dashboard-header">
+            <h2>Customer Segments</h2>
+        </header>
+        <section class="charts-row">
+            {% for c in clusters %}
+            <div class="chart-card">
+                <h4>Cluster {{ c.cluster }}</h4>
+                <ul>
+                    <li><b>Customers:</b> {{ c.count }}</li>
+                    <li><b>Avg Age:</b> {{ c.avg_age }}</li>
+                    <li><b>Avg Income:</b> ${{ c.avg_income }}k</li>
+                    <li><b>Avg Score:</b> {{ c.avg_score }}</li>
+                </ul>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+</div>
+</body>
+</html> 
