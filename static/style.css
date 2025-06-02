@@ -136,6 +136,26 @@ body {
     font-size: 1em;
     color: #444;
 }
+.metric-dropdown {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+}
+.metric-dropdown:hover {
+    border-color: #6C63FF;
+}
+.metric-dropdown:focus {
+    outline: none;
+    border-color: #6C63FF;
+    box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+}
 @media (max-width: 1100px) {
     .charts-row, .info-row {
         flex-direction: column;
