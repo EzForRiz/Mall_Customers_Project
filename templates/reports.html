@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <h2>MyFinances</h2>
+        <nav>
+            <ul>
+                <li><a href="/">Overview</a></li>
+                <li><a href="/segments">Segments</a></li>
+                <li class="active"><a href="/reports">Reports</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <header class="dashboard-header">
+            <h2>Reports & Downloads</h2>
+        </header>
+        <section class="info-row">
+            <div class="info-card">
+                <h4>Download Data</h4>
+                <ul>
+                    <li><a href="/download/all">Download Full Dataset (CSV)</a></li>
+                    {% for c in clusters %}
+                    <li><a href="/download/{{ c }}">Download Cluster {{ c }} (CSV)</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html> 
